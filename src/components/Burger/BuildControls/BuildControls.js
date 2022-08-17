@@ -25,7 +25,7 @@ const BuildControls = (props) => {
                 />
             ))}
             <button
-                className={classes.OrderButton}
+                className="bg-yellow-400 mt-5 px-7 py-4 rounded-md shadow-md text-sm cursor-pointer hover:bg-yellow-500 disabled:bg-slate-400 disabled:text-slate-500 disabled:cursor-not-allowed [&:not(disabled)]:animate-pulse"
                 disabled={!props.purchasable}
                 onClick={props.ordered}
             >
