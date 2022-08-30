@@ -4,7 +4,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 
 const Toolbar = (props) => {
     return (
-        <header className="fixed top-0 left-0 h-14 w-full bg-yellow-900 flex items-center justify-between px-4 md:px-20 z-[90]">
+        <header className="fixed top-0 left-0 h-14 w-full bg-yellow-800 flex items-center justify-between px-4 md:px-20 z-[90]">
             <Logo />
             <nav className="hidden md:block">
                 <NavigationItems />

@@ -5,13 +5,13 @@ import Aux from "../../../hoc/Aux/Auxiliary";
 
 const SideDrawer = (props) => {
     let className = [
-        "fixed w-72 max-w-[70%] h-full left-0 top-0 z-[200] bg-white py-8 px-4 transition-all sm:hidden",
+        "fixed w-72 max-w-[80%] h-full left-0 top-0 z-[200] bg-white py-8 px-4 transition-all sm:hidden",
         "-translate-x-full",
     ];
 
     if (props.open) {
         className = [
-            "fixed w-72 max-w-[70%] h-full left-0 top-0 z-[200] bg-white py-8 px-4 transition-all sm:hidden",
+            "fixed w-72 max-w-[80%] h-full left-0 top-0 z-[200] bg-white py-8 px-4 transition-all sm:hidden",
             "translate-x-0",
         ];
     }

@@ -1,6 +1,4 @@
-import React from "react";
 import BuildControl from "./BuildControl/BuildControl";
-import classes from "./BuildControls.module.css";
 
 const controls = [
     { label: "Salad", type: "salad" },
@@ -11,21 +9,23 @@ const controls = [
 
 const BuildControls = (props) => {
     return (
-        <div className={classes.BuildControls}>
+        <div className="w-full bg-yellow-600 flex flex-col items-center mx-auto py-5">
             <p>
                 Current Price: $ <strong>{props.price.toFixed(2)}</strong>
             </p>
-            {controls.map((control) => (
-                <BuildControl
-                    added={() => props.addIngredient(control.type)}
-                    removed={() => props.removeIngredient(control.type)}
-                    disabled={props.disabled[control.type]}
-                    key={control.label}
-                    label={control.label}
-                />
-            ))}
+            <div className="my-5">
+                {controls.map((control) => (
+                    <BuildControl
+                        added={() => props.addIngredient(control.type)}
+                        removed={() => props.removeIngredient(control.type)}
+                        disabled={props.disabled[control.type]}
+                        key={control.label}
+                        label={control.label}
+                    />
+                ))}
+            </div>
             <button
-                className="bg-yellow-400 mt-5 px-7 py-4 rounded-md shadow-md text-sm cursor-pointer hover:bg-yellow-500 disabled:bg-slate-400 disabled:text-slate-500 disabled:cursor-not-allowed [&:not(disabled)]:animate-pulse"
+                className="bg-yellow-400 mt-5 px-7 py-3 rounded-md shadow-md text-sm font-light cursor-pointer hover:bg-yellow-500 disabled:bg-gray-400 disabled:text-gray-600 disabled:cursor-not-allowed"
                 disabled={!props.purchasable}
                 onClick={props.ordered}
             >
