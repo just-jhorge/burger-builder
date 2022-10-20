@@ -4,11 +4,10 @@ import Backdrop from "../Backdrop/Backdrop";
 
 class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.show !== this.props.show;
-    }
-
-    componentWillUpdate() {
-        console.log("[Modal] will update");
+        return (
+            nextProps.show !== this.props.show ||
+            nextProps.children !== this.props.children
+        );
     }
 
     render() {
@@ -19,7 +18,7 @@ class Modal extends Component {
                     clicked={this.props.modalClosed}
                 />
                 <div
-                    className="fixed z-[200] bg-white ring-2 ring-black rounded-md px-5 py-10 left-5 right-5 md:left-[calc(50%-250px)] sm:left-[15%] top-[20%] transition-all sm:w-[500px]"
+                    className="fixed left-5 right-5 top-[20%] z-[200] rounded-md bg-white px-5 py-10 ring-2 ring-black transition-all sm:left-[15%] sm:w-[500px] md:left-[calc(50%-250px)]"
                     style={{
                         transform: this.props.show
                             ? "translateY(0)"

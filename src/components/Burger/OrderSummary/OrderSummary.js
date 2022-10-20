@@ -2,17 +2,13 @@ import React, { Component } from "react";
 import Aux from "../../../hoc/Aux/Auxiliary";
 
 class OrderSummary extends Component {
-    componentWillUpdate() {
-        console.log("[OrderSummary] will update");
-    }
-
     render() {
         const ingredientSummary = Object.keys(this.props.ingredients).map(
             (igKey) => {
                 return (
                     <li
                         key={igKey}
-                        className="flex items-center justify-between w-24"
+                        className="flex w-24 items-center justify-between"
                     >
                         <span className="capitalize">{igKey} :</span>
                         <span>{this.props.ingredients[igKey]}</span>
@@ -22,7 +18,7 @@ class OrderSummary extends Component {
         );
         return (
             <Aux>
-                <h3 className="font-semibold mb-3">Your Order</h3>
+                <h3 className="mb-3 font-semibold">Your Order</h3>
                 <p className="mb-2">
                     A delicious burger with the following ingredients:
                 </p>
@@ -32,15 +28,15 @@ class OrderSummary extends Component {
                     <strong>$ {this.props.price.toFixed(2)}</strong>
                 </p>
                 <p>Continue to Checkout?</p>
-                <div className="w-full flex items-center justify-end pt-5 space-x-2">
+                <div className="flex w-full items-center justify-end space-x-2 pt-5">
                     <button
-                        className="uppercase text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 transition-colors"
+                        className="mr-2 mb-2 rounded-lg border border-green-700 px-5 py-2.5 text-center text-sm font-medium uppercase text-green-700 transition-colors hover:bg-green-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-300"
                         onClick={this.props.continuePurchase}
                     >
                         continue
                     </button>
                     <button
-                        className="uppercase text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 transition-colors"
+                        className="mr-2 mb-2 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium uppercase text-red-700 transition-colors hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300"
                         onClick={this.props.cancelPurchase}
                     >
                         cancel
